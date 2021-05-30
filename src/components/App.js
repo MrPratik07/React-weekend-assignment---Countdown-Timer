@@ -10,9 +10,13 @@ const App = () => {
   function updateTime(){
     var input=document.getElementById("timeCount");
     var time=Math.floor(input.value);
-      setInterval(()=>{
-        setcurrentTime(time--);
-      },1000);
+    setcurrentTime(time);
+    var countDownBegins = setInterval(() => {
+          setcurrentTime(time--);
+          if (time === 0) {
+            clearInterval(countDownBegins);
+          }
+    }, 1000);
     
     
   }
