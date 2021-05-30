@@ -8,11 +8,12 @@ const App = () => {
   
   
   function updateTime(){
-    var input=document.getElementById("timeCount").value;
-    console.log(input);
-    setInterval(()=>{
-        setcurrentTime(input--);
-    },1000);
+    var input=document.getElementById("timeCount");
+    var time=Math.floor(input.value);
+      setInterval(()=>{
+        setcurrentTime(time--);
+      },1000);
+    
     
   }
 
