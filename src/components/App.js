@@ -4,24 +4,29 @@ import '../styles/App.css';
 const App = () => {
   // write your code here
   
-  const [currentTime,setcurrentTime]=useState(0);
+  const [currentTime,setcurrentTime]=useState("Enter the Number");
   
   
-  function updateTime(){
+  const updateTime=()=>{
     var input=document.getElementById("timeCount");
-    var time=Math.floor(input.value);
+    //var time=Math.floor(input.value);
+    var time=input.value;
     setcurrentTime(time);
-    var countDownBegins = setInterval(() => {
-          setcurrentTime(time--);
-          if (time === 0) {
+   // useEffect(()=>{
+      var countDownBegins = setInterval(() => {
+        if(currentTime > 0){
+            setcurrentTime(currentTime-1);
+          }
+          if(currentTime===0){
             clearInterval(countDownBegins);
           }
     }, 1000);
-    
-    
-  }
 
-  return (
+  //});
+  
+}
+  
+return (
     <div className="wrapper">
       <div id="whole-center">
         <h1>
