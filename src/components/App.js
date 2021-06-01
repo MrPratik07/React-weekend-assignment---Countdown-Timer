@@ -4,7 +4,7 @@ import '../styles/App.css';
 const App = () => {
   // write your code here
   
-  const [currentTime,setcurrentTime]=useState("Enter the Number");
+  const [currentTime,setcurrentTime]=useState(0);
   
   
   const updateTime=(event)=>{
