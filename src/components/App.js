@@ -7,22 +7,19 @@ const App = () => {
   const [currentTime,setcurrentTime]=useState("Enter the Number");
   
   
-  const updateTime=()=>{
-    var input=document.getElementById("timeCount");
-    //var time=Math.floor(input.value);
-    var time=input.value;
-    setcurrentTime(time);
-   // useEffect(()=>{
+  const updateTime=(event)=>{
+    if(event.key === "Enter" ){
+      var time=Number(document.getElementById("timeCount").value);
       var countDownBegins = setInterval(() => {
-        if(currentTime > 0){
-            setcurrentTime(currentTime-1);
-          }
-          if(currentTime===0){
-            clearInterval(countDownBegins);
-          }
-    }, 1000);
+        if(time===0){
+          clearInterval(countDownBegins);
+        }
+            setcurrentTime(time);
+            time--;
 
-  //});
+          
+    }, 1000);
+    }
   
 }
   
